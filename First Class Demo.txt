@@ -1,0 +1,287 @@
+1. Why use React ??
+
+	1. Ui easir, Component based.
+	2. Virtual Dom Concept.
+	
+	simple Htm; ,css , Javascript.
+
+
+	- Virtual DOM kya karta hai?
+
+	. Virtual DOM ek lightweight copy hota hai real DOM ka.
+
+	- Jab koi change hota hai:
+
+	. Pehle change Virtual DOM mein hota hai
+	
+	Phir React purane Virtual DOM aur naye Virtual DOM ko compare karta hai (isko kehte hain Diffing)
+	Sirf jo parts change hue hote hain, unko real DOM mein update karta hai.
+
+	-Real DOM = original printed book 📕
+	-Virtual DOM = us book ka photocopy 📄
+
+	Short Summary:
+
+	Virtual DOM ek smart system hai jo real DOM ko directly bar bar update nahi karta, balkay pehle changes ko memory mein handle karta hai aur phir 	sirf necessary updates real DOM mein karta hai.
+
+
+2. JSX (javascript XML) mean
+
+	.write html inside the code using Javascript.
+	.Ye React ka syntax hai jisme tum HTML jaisa code directly JavaScript ke andar likh sakte ho.
+
+- Difference
+
+1. javascript element
+	
+	const elem = document.createElement("h1");
+	elem.textContent = "hello Js";
+
+2. jsx (easir syntax)
+
+	const elem = <h1>Hello js</h1>
+
+3. React JS
+					
+	const element = React.createElement('h1', null, 'Hello World');
+		h1 //tag
+		null // attr
+		Hello world // content
+
+	Browser JSX ko directly samajh nahi sakta
+	Isliye Babel (compiler) ise convert karta hai normal JavaScript me
+
+Simple:
+
+.JSX = JavaScript + XML-like syntax
+.React me UI banane ke liye use hota hai
+.Easy, clean, readable
+
+
+- JavaScript Expressions in React (JSX)
+
+	Expression = aisi JavaScript value jo evaluate ho kar result deti hai
+
+	 Allowed:
+
+	. numbers
+	. variables
+	. functions call
+	. operations (+, -, *, etc.)
+
+	❌ Not allowed:
+	statements (if, for, etc. direct nahi likh sakte)
+
+	Example:
+	
+	1.	
+	
+	const name = "Ahsan";
+
+	return <h1>Hello {name}</h1>;
+	
+
+	2. 
+		
+	<h1>{5 + 5}</h1>   // Output: 10
+
+	3. 
+
+	function greet() {
+ 	 return "Hello!";
+	}
+
+	<h1>{greet()}</h1>
+
+- Two types of component 
+
+	- Functional Components
+
+	function Hello() {
+ 		 return <h1>Hello World</h1>;
+	}
+
+	// with state Example
+
+	import { useState } from "react";
+
+	function Counter() {
+ 	 const [count, setCount] = useState(0);
+
+ 	 return (
+  	  <button onClick={() => setCount(count + 1)}>
+    	  {count}
+    	</button>
+ 	 );
+	}
+
+	- Class Components (Old Method) (oop Based)
+
+	import React, { Component } from "react";
+
+	class Hello extends Component {
+ 	 render() {
+  	     return <h1>Hello World</h1>;
+  	   }
+	}
+
+-  how to save File File Name (First Letter Should be Capitial)
+
+	1. PostForm.jsx
+
+	function PostForm(){
+		
+	return (
+		<>
+			<h1>Ahsan</h1>
+		</>
+	)
+	
+}
+
+- what are hooks?
+
+	Hooks React ke special functions hote hain jo hamain functional components me extra features use karne dete hain.
+
+	Jab hum React me functional component likhte hain, wo normally sirf UI return karta hai.
+
+	. Lekin Hooks us component ko “power” dete hain:
+
+		.memory (state)
+		.lifecycle control
+		.external world se connection
+
+	. functional Component
+ 
+	function Hello() {
+ 	 return <h1>Hello World</h1>;
+	}
+
+
+- useEffect Hooks
+
+
+	.Remove SideEffect inside Component
+	.Remove SideEffect from outSide Component
+	.use to fetchdata.
+	
+	basic use Of useEffect	
+
+	.Prevent Extra rendring of Component on State.
+
+	- useEffect kya hota hai?
+
+		.useEffect ek hook hai jo React me side effects handle karne ke liye use hota hai
+
+	- Side effects ka matlab:
+
+	API se data lana (fetch)
+	DOM update karna
+	Timer lagana
+	console log, etc.
+
+	Example:
+		. Remove Side Effects inside Component
+		// Wrong
+		function App() {
+  			fetch("api-url")   // direct call (wrong)
+
+  			return <h1>Hello</h1>
+		}
+		
+	- Ye har render pe run hoga (problem create karega)
+	
+	- “Remove Side Effects from outside Component”
+		
+	//  Wrong
+	fetch("api-url")
+
+	function App() {
+ 	 return <h1>Hello</h1>
+	}
+
+	
+	- Correct way = useEffect
+
+	import { useEffect } from "react";
+
+	function App() {
+ 	useEffect(() => {
+    		console.log("Component load hua");
+  	}, []);
+
+  	return <h1>Hello</h1>;
+	}
+	
+	.Ye sirf 1 baar run hoga (on mount)
+
+- Basic use of useEffect
+
+	Run on every render
+	
+	1. useEffect(() => {
+  		console.log("Har render pe run hoga"); // call everytime
+	});
+
+	2. useEffect(() => {
+  		console.log("Sirf 1 baar"); //Call only once
+	}, []);
+
+	3. useEffect(() => {
+  		console.log("Count change hua"); // call on single state
+	}, [count]);
+
+	4. useEffect(() => {
+  		console.log("states change huin"); // call on changeing both state
+	}, [state1,state2]);
+
+	5. useEffect(() => {
+  		console.log("states change huin"); // call on changeing props
+	}, [prop1,prop2]);
+
+
+- useState hooks
+	
+	useState ek hook hai jo hamain component me data (state) store aur update karne deta hai
+
+- Basic Syntax
+
+	const [state, setState] = useState(initialValue);
+	state = current value
+	setState = update karne ka function
+	initialValue = starting value
+
+	Example: 
+
+	import { useState } from "react";
+
+	function Counter() {
+ 		 const [count, setCount] = useState(0);
+
+ 	 return (
+  	  <div>
+     		 <h1>Count: {count}</h1>
+	
+    		  <button onClick={() => setCount(count + 1)}>
+    		    Increase
+    		  </button>
+
+   		   <button onClick={() => setCount(count - 1)}>
+    		    Decrease
+    		  </button>
+  	  </div>
+  	);
+	}
+	
+export default Counter;
+
+Important Points
+
+- State change → re-render
+
+-Jab bhi setState call hota hai → component dubara render hota hai
+
+
+
+	
+
