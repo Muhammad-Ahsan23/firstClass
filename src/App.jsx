@@ -57,15 +57,44 @@ function App() {
 
   // --------- Second Class Props --------
 
-  const title = "outside the react";
+  // const title = "outside the react";
 
-  const obj = {
-    title: "phadda",
-    value: "1500",
-    name: "ibad and arman",
-    reason: "maa chudi guitar ki",
-    solution: "arman ki lenay kay baad"
+  // const obj = {
+  //   title: "phadda",
+  //   value: "1500",
+  //   name: "ibad and arman",
+  //   reason: "maa chudi guitar ki",
+  //   solution: "arman ki lenay kay baad"
+  // }
+
+  // const handleClick = () =>{
+  //   alert('closed');
+  // }
+
+  // two syntax of function normal function and arrow function
+
+  // function hello(name){
+  //   return name;
+  // }
+
+
+  // const hello = (name) =>{
+  //     return name;
+  // }
+
+  // Events Class
+
+  // const handleClick = () =>{
+  //   alert("Ahsan")
+  // }
+
+  const[val,setVal]=useState() 
+
+  function handleChange(e){
+    setVal(e.target.value)
+    console.log(e.target.value);
   }
+
 
   return (
 
@@ -87,9 +116,24 @@ function App() {
       {/*  --------- Props ------------ */}
 
       {/*    <Hello title={title} name="Arman / Ibad" id="1" /> */}
-      <Hello items={obj} />
-      
-      {/* <Hello2/> */}
+      {/* <Hello items={obj} /> */}
+
+      {/* Pass function */}
+
+      {/* <Hello2 func={handleClick}/> */}
+
+      {/* How to write function */}
+
+      {/* <h2>{hello("ahsan")}</h2> */}
+
+      {/* Events class */}
+
+        {/* <button onClick={handleClick}>Click Me </button> */}
+
+        {/* <h1>{val}</h1> */}
+        {/* <input type="text" onChange={handleChange} /> */}
+
+
 
     </>
 

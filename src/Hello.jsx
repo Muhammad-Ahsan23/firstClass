@@ -1,3 +1,4 @@
+import './assets/hello.css'
 
 // Props way 1
 
@@ -46,9 +47,9 @@
 
 // import React from 'react'
 
-// export default function Hello({ items }) {
-//     console.log(items.value);
-//     return (
-//         <div>Hello</div>
-//     )
-// }
+export default function Hello({ items }) {
+    // console.log(items.value);
+    return (
+        <div>Hello</div>
+    )
+}
