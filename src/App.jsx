@@ -88,13 +88,52 @@ function App() {
   //   alert("Ahsan")
   // }
 
-  const[val,setVal]=useState() 
+  // const[val,setVal]=useState() 
 
-  function handleChange(e){
-    setVal(e.target.value)
-    console.log(e.target.value);
-  }
+  // function handleChange(e){
+  //   setVal(e.target.value)
+  //   console.log(e.target.value);
+  // }
 
+
+  // --------------------- Third Class --------------------
+
+  //  -------- Array & Object ------------
+  // How to store Array & object data in state; 
+
+  // let arr = ['mango','banana','oranage','peach'];
+
+
+  // Object
+
+  // let obj = {
+  //   firstName: "Muhammad",
+  //   middeName: "Ahsan",
+  //   lastName: "shaikh",
+  //   age: "22",
+  //   priceRemaining: ['1500','200','300'],
+  // }
+
+  // Array Of Object
+
+  let job = [
+
+    { jobTitle: "Junior Developers", type: "part time", img: "https://fastly.picsum.photos/id/66/200/300.jpg?hmac=zvcP8mVCNIMoM5f8iC-xSgDhR1VklmBY2SON28P4TOo", country: 'columnbia', salary: 2000, url: 'https://google.com' },
+
+    { jobTitle: "Senior Developers", type: "full time", img: "https://fastly.picsum.photos/id/66/200/300.jpg?hmac=zvcP8mVCNIMoM5f8iC-xSgDhR1VklmBY2SON28P4TOo", country: 'pakistan', salary: 2000, url: 'https://facebook.com' },
+
+    { jobTitle: "nulla Developers", type: "full time", img: "https://fastly.picsum.photos/id/66/200/300.jpg?hmac=zvcP8mVCNIMoM5f8iC-xSgDhR1VklmBY2SON28P4TOo", country: 'pakistan', salary: 2000, url: 'https://youtube.com' },
+
+
+    { jobTitle: "Normal Developers", type: "contract", img: "https://fastly.picsum.photos/id/66/200/300.jpg?hmac=zvcP8mVCNIMoM5f8iC-xSgDhR1VklmBY2SON28P4TOo", country: 'India', salary: 2000, url: 'https://whatsapp.com' },
+
+
+    { jobTitle: "senior designer", type: "contract", img: "https://fastly.picsum.photos/id/66/200/300.jpg?hmac=zvcP8mVCNIMoM5f8iC-xSgDhR1VklmBY2SON28P4TOo", country: 'Ukraine', salary: 2000, url: 'https://remote.com' },
+
+
+    { jobTitle: "Ibad senior", type: "part time", img: "https://fastly.picsum.photos/id/66/200/300.jpg?hmac=zvcP8mVCNIMoM5f8iC-xSgDhR1VklmBY2SON28P4TOo", country: 'America', salary: 1600, url: 'https://google.com' },
+
+  ]
 
   return (
 
@@ -128,10 +167,98 @@ function App() {
 
       {/* Events class */}
 
-        {/* <button onClick={handleClick}>Click Me </button> */}
+      {/* <button onClick={handleClick}>Click Me </button> */}
 
-        {/* <h1>{val}</h1> */}
-        {/* <input type="text" onChange={handleChange} /> */}
+      {/* <h1>{val}</h1> */}
+      {/* <input type="text" onChange={handleChange} /> */}
+
+
+      {/*============================ Third Class ========================= */}
+
+
+      {/* <ul>
+            {
+                arr.map((items,index)=>(
+                  <li key={index}>{items}</li>                  
+                ))
+            }
+        </ul> */}
+
+      {/* Object */}
+
+      {/* <ul> */}
+      {/* <li>{obj.firstName}</li> */}
+      {/* <li>{obj.lastName}</li> */}
+      {/* <li>{obj.age}</li> */}
+      {/* <li>Price Remaining: <ul>{obj.priceRemaining.map((items,index)=>(<li key={items}>{items}</li>))}</ul></li> */}
+      {/* </ul> */}
+
+
+      {/* Arrray of object */}
+
+
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+        {
+          job.map((jobList, index) => (
+            <div>
+              <div
+                style={{
+                  width: "260px",
+                  border: "1px solid #ddd",
+                  borderRadius: "12px",
+                  padding: "15px",
+                  boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+                  fontFamily: "Arial",
+                }}
+              >
+                <img
+                  src={jobList.img}
+                  alt="job"
+                  style={{
+                    width: "100%",
+                    height: "150px",
+                    objectFit: "cover",
+                    borderRadius: "10px",
+                  }}
+                />
+
+                <h3 style={{ margin: "10px 0 5px", fontSize: "18px" }}>
+                  {jobList.jobTitle}
+                </h3>
+
+                <p style={{ margin: "5px 0", color: "gray" }}>
+                  Type: {jobList.type}
+                </p>
+
+                <p style={{ margin: "5px 0", color: "gray" }}>
+                  Country: {jobList.country}
+                </p>
+
+                <p style={{ margin: "10px 0", fontWeight: "bold", color: "#333" }}>
+                  {jobList.salary}
+                </p>
+
+                <a
+                  href={jobList.url}
+                  style={{
+                    width: "100%",
+                    padding: "8px",
+                    border: "none",
+                    borderRadius: "8px",
+                    backgroundColor: "#4CAF50",
+                    color: "white",
+                    cursor: "pointer",
+                  }}
+                >
+                  Apply Now
+                </a>
+
+              </div>
+            </div>
+          ))
+        }
+
+      </div>
 
 
 

@@ -1,4 +1,4 @@
-import './assets/hello.css'
+// import './assets/hello.css'
 
 // Props way 1
 
