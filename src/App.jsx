@@ -5,6 +5,7 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import Hello from './Hello'
 import Hello2 from './Hello2'
+import SimpleForm from './SimpleForm'
 
 function App() {
 
@@ -197,7 +198,7 @@ function App() {
       {/* Arrray of object */}
 
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+      {/* <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
         {
           job.map((jobList, index) => (
             <div>
@@ -258,9 +259,11 @@ function App() {
           ))
         }
 
-      </div>
+      </div> */}
 
+      {/* Fourth Class Form Handling */}
 
+      <SimpleForm />
 
     </>
 
