@@ -6,6 +6,9 @@ import './App.css'
 import Hello from './Hello'
 import Hello2 from './Hello2'
 import SimpleForm from './SimpleForm'
+// import MultiInputForm from './MultiInputForm'
+import AdvanceForm from './AdvanceForm'
+import MultiInputForm from './muzammil/MultiInputForm'
 
 function App() {
 
@@ -263,7 +266,11 @@ function App() {
 
       {/* Fourth Class Form Handling */}
 
-      <SimpleForm />
+      {/* <SimpleForm /> */}
+      {/* <MultiInputForm/> */}
+      {/* <AdvanceForm/> */}
+
+      <MultiInputForm/>
 
     </>
 
